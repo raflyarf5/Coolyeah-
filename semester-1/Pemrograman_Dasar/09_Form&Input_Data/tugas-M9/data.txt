@@ -1,0 +1,1 @@
+{"nama":"MOH RAFLY ARIFIANTO","email":"raflyarif715@gmail.com","nomor":"08584743734","umur":"18","url":"https:\/\/github.com\/raflyarf5\/Coolyeah-.git","kategori":"Hackathon","peserta":"Individu"}
