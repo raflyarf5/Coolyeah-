@@ -1,0 +1,539 @@
+/* =========================================================
+   TEFA Feedlot dan Sapi Perah - Politeknik Negeri Jember
+   Style bersama untuk semua halaman (tampilan statis)
+   Acuan: Figma, lebar desain 1440px
+   ========================================================= */
+
+/* ---------- Dasar ---------- */
+:root {
+  --hijau: #386641;
+  --latar: #fbf9f9;
+  --bayangan-kartu: 0 6px 6px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--latar);
+  color: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background: var(--hijau);
+  color: #fff;
+  height: 103px;
+  padding: 22px 65px 0 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar-brand h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.navbar-brand p {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  margin-top: 8px;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: flex-start;
+  gap: 34px;
+  margin-top: 29px;
+}
+
+.navbar-menu > a,
+.dropdown-btn {
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+}
+
+/* menu yang sedang dibuka diberi garis bawah */
+.navbar-menu > a.aktif {
+  border-bottom-color: #fff;
+}
+
+/* dropdown "Informasi" */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 12px;
+  width: 124px;
+  padding: 8px 10px 10px;
+  background: var(--hijau);
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-menu.buka {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  font-size: 16px;
+  line-height: 25px;
+  color: #fff;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--hijau);
+  color: #fff;
+  min-height: 218px;
+  display: grid;
+  grid-template-columns: 683px 400px 1fr;
+  padding: 25px 0 0 29px;
+}
+
+.footer-brand h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  margin-top: 9px;
+}
+
+.footer-brand .sub {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  margin-top: 9px;
+}
+
+.footer-brand .desc {
+  width: 400px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-top: 16px;
+}
+
+.footer h4 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.footer-links ul {
+  margin-top: 20px;
+}
+
+.footer-links li {
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 9px;
+}
+
+.footer-contact p {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.footer-contact h4 + p {
+  margin-top: 20px;
+  margin-left: 0;
+}
+
+.footer-contact p + p {
+  margin-top: 13px;
+  margin-left: -5px;
+}
+
+.footer-contact .garis-bawah {
+  text-decoration: underline;
+}
+
+.sosial-footer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 13px 0 0 12px;
+}
+
+.sosial-footer svg {
+  display: block;
+  stroke: #fff;
+}
+
+/* ---------- Beranda (hero) ---------- */
+.hero {
+  flex: 1;
+  min-height: 703px;
+  /* lapisan gelap tipis di atas foto, supaya tulisan putih terbaca */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("images/hero-tefa.jpg") center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero h2 {
+  width: 564px;
+  max-width: 100%;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.tombol-hijau {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 145px;
+  height: 39px;
+  margin-top: 90px;
+  background: var(--hijau);
+  color: #fff;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+/* ---------- Halaman umum (Layanan, Produk, Tentang, Hubungi) ---------- */
+.halaman {
+  flex: 1;
+  min-height: 703px;
+  padding-top: 48px;
+}
+
+.judul-halaman {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  color: var(--hijau);
+}
+
+.sub-halaman {
+  text-align: center;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 18px;
+}
+
+/* ---------- Kartu (Layanan & Produk) ---------- */
+.deret-kartu {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 52px;
+}
+
+.kartu {
+  position: relative;
+  display: block;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: var(--bayangan-kartu);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.kartu img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.kartu .label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--label-atas);
+  text-align: center;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* Layanan: kartu 411 x 390 */
+.kartu-layanan {
+  width: 411px;
+  height: 390px;
+  --label-atas: 286px;
+  cursor: pointer;
+}
+
+.kartu-layanan img {
+  height: 269px;
+}
+
+/* Produk: kartu 310 x 392 */
+.kartu-produk {
+  width: 310px;
+  height: 392px;
+}
+
+/* ---------- Pop up (Layanan) ---------- */
+.modal-latar {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-latar.buka {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  width: 673px;
+  height: 493px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.modal h3 {
+  position: absolute;
+  left: 29px;
+  top: 35px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--hijau);
+}
+
+.modal-tutup {
+  position: absolute;
+  left: 603px;
+  top: 23px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-size: 30px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal .deskripsi {
+  position: absolute;
+  left: 29px;
+  top: 87px;
+  width: 500px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal ul {
+  position: absolute;
+  left: 22px;
+  top: 156px;
+  list-style: disc;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.modal li {
+  margin-left: 24px;
+}
+
+.modal-daftar {
+  position: absolute;
+  left: 207px;
+  top: 337px;
+  width: 260px;
+  height: 63px;
+  background: var(--hijau);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px 0 23px;
+}
+
+.modal-daftar svg {
+  stroke: #fff;
+}
+
+.modal .tanya {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 422px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+/* ---------- Tentang Kami ---------- */
+.halaman-tentang {
+  min-height: 893px;
+}
+
+.tentang {
+  display: flex;
+  padding: 23px 0 0 53px;
+}
+
+.tentang-teks {
+  width: 838px;
+}
+
+.tentang-teks h3 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.tentang-teks h4 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 6px;
+}
+
+.tentang-teks p {
+  width: 375px;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+.tentang-teks .jarak-visi {
+  margin-top: 57px;
+}
+
+.tentang-teks .jarak-visi + p {
+  margin-top: 24px;
+}
+
+.tentang-kartu {
+  width: 310px;
+  height: 392px;
+  margin-top: 12px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: var(--bayangan-kartu);
+}
+
+/* ---------- Hubungi Kami ---------- */
+.sub-hubungi {
+  width: 372px;
+  margin: 0 auto;
+}
+
+.kontak {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 81px 0 58px;
+  margin-top: 17px;
+}
+
+.kontak-kiri {
+  width: 640px;
+}
+
+.kontak-label {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.kontak-alamat {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.kontak-nilai {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.kontak-nilai a {
+  text-decoration: underline;
+}
+
+.kontak-kiri .jarak-besar {
+  margin-top: 27px;
+}
+
+.kontak-kiri .jarak-sedang {
+  margin-top: 17px;
+}
+
+.sosial-kontak {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 37px;
+  margin: 36px 0 0 0;
+}
+
+.sosial-kontak svg {
+  display: block;
+  stroke: #000;
+}
+
+.kontak-peta {
+  width: 534px;
+  height: 476px;
+  object-fit: cover;
+  display: block;
+}
